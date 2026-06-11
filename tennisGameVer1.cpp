@@ -1,7 +1,7 @@
 ﻿#include "Dxlib.h"
 #include <stdlib.h>
 
-//#define MOUSE_USE
+#define MOUSE_USE
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -105,7 +105,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 #ifdef MOUSE_USE	// マウスで操作
 			DxLib::GetMousePoint(&mouseX, &mouseY);
 			racketX = mouseX;
-//			racketY = mouseY;	// Y座標は固定なので使用しない
+//		racketY = mouseY;	// Y座標は固定なので使用しない
 			if (racketX < racketW / 2)	racketX = racketW / 2;
 			if (racketX > WIDTH - racketW / 2)	racketX = WIDTH - racketW / 2;
 #else				// キーボードで操作
